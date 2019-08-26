@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <p>Calculate Your Electricity Bill</p> 
+</div>
+<div class="container page-form">
+    <form id="login-form" action="/recv/e_input" method="post">
+      <div class="form-group row">
+          <label for="example-number-input" class="col-2 col-form-label">Please Enter Electricity Meter Old Reading </label>
+          <div class="col-10">
+            <input class="form-control" type="number" value="00000" maxlength="5" id="e_old-meter-input" name="e_old">
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="example-number-input" class="col-2 col-form-label">Please Enter Electricity Meter New Reading</label>
+          <div class="col-10">
+            <input class="form-control" type="number" value="00000" maxlength="5" id="e_new-meter-input" name="e_new">
+          </div>
+      </div>
+      
+        <button type="submit" class="btn btn-success">Calculate</button>
+        <input class="btn btn-primary" type="reset" value="Reset">
+    </form>
+    <div>
+        <h2> Your Total Electricity Bill is.....</h2>
+        <h1> RMB {{e_bill}} </h1>
+    </div>
+      <input class="btn btn-primary" type="reset" value="Reset">
+      <a class="btn btn-primary" href="{{ url_for('return_home')}}" role="button">Return Home</a>
+  
+</div>
+
+{% endblock %}
