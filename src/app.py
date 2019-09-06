@@ -9,4 +9,4 @@ def home_template():
 
 
 if __name__ == "__main__":
-    app.run(port = 4995)
+    app.run()
